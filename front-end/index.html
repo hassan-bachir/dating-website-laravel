@@ -21,14 +21,111 @@
     <section class="flex" id="login-content">
         <img src="./assets/couple2.jpg" />
         <div class="flex-col" id="login-content-txt">
-          <span id="login-content-txt-title">Find the love of your life!</span>
-          <span id="login-content-txt-desc">
+        <span id="login-content-txt-title">Find the love of your life!</span>
+        <span id="login-content-txt-desc">
             Your preferences matter. Search through our users to find your other
             half!
-          </span>
+        </span>
         </div>
-      </section>
+    </section>
 
+    <!-- FORMS -->
+    <!-- Sign In Form -->
+    <form class="flex-col" id="signInForm">
+        <div class="flex-col form-content">
+        <div class="flex close-form"><p>X</p></div>
+        <img src="./assets/Dating Design Transparent.png" />
+        <div class="form-title"><p>Sign In</p></div>
+        <div class="flex-col form-row">
+        <label>Email</label>
+            <input id="signInEmail" type="email" placeholder="Email" required />
+        </div>
+        <div class="flex-col form-row">
+        <label>Password</label>
+            <input
+            id="signInPass"
+            type="password"
+            placeholder="Password"
+            required
+        />
+        </div>
+        <button id="signInSubmit" class="btn btn-filled formBtn">
+            Sign In
+        </button>
+        </div>
+    </form>
+
+    <!-- Sign Up Form -->
+    <form class="flex-col" id="signUpForm">
+        <div class="flex-col form-content">
+        <div class="flex close-form"><p>X</p></div>
+        <div class="form-title"><p>Sign Up</p></div>
+        <div class="flex-col form-row">
+        <label>Full Name</label>
+            <input id="signUpName" type="text" placeholder="Full Name" required />
+        </div>
+        <div class="flex-col form-row">
+            <label>Email</label>
+            <input id="signUpEmail" type="email" placeholder="Email" required />
+        </div>
+        <div class="flex-col form-row">
+        <div class="flex form-row-double">
+            <div class="flex-col form-row">
+                <label>Your Gender</label>
+                <select id="gender">
+                <option value="0">Male</option>
+                <option value="1">Female</option>
+                </select>
+            </div>
+
+            <div class="flex-col form-row">
+                <label>Looking For</label>
+                <select id="selectedGender">
+                <option value="0">Males</option>
+                <option value="1">Females</option>
+            </select>
+            </div>
+            </div>
+        </div>
+        <div class="flex-col form-row">
+            <div class="flex form-row-double">
+            <div class="flex-col form-row">
+                <label>Date of Birth</label>
+                <input
+                id="dob"
+                type="date"
+                placeholder="Date of Birth"
+                required
+                />
+            </div>
+
+            <div class="flex-col form-row">
+                <label>Location:</label>
+                <button
+                class="btn"
+                id="locationDetectorSignUp"
+                style="font-size: 12px"
+                >
+                Detect Location
+                </button>
+            </div>
+            </div>
+        </div>
+
+        <div class="flex-col form-row">
+            <label>Password</label>
+            <input
+            id="signUpPass"
+            type="password"
+            placeholder="Password"
+            required
+            />
+        </div>
+        <button id="signUpSubmit" class="btn btn-filled formBtn">
+            Sign Up
+        </button>
+        </div>
+    </form>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
