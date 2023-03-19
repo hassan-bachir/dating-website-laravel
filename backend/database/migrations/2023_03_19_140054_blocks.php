@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('blocks', function (Blueprint $table) {
-            $table->integer('blocker_id');
-            $table->integer('blocked_id');
-            $table->string('time_of_block');
+            $table->integer('user1_id');
+            $table->integer('user2_id');
+            $table->string('created_at');
             $table->timestamps();
         });
     }
