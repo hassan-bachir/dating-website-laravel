@@ -54,6 +54,49 @@ class DatabaseSeeder extends Seeder
             
             'created_at' => $current_date_time
         ]);
-
+        DB::table('blocks')->insert([
+            'user1_id' => 1,
+            'user2_id' => 3,
+            'created_at' => $current_date_time
+        ]);
+        DB::table('blocks')->insert([
+            'user1_id' => 3,
+            'user2_id' => 2,
+            'created_at' => $current_date_time
+        ]);
+        DB::table('favorites')->insert([
+            'user1_id' => 1,
+            'user2_id' => 4,
+            'created_at' => $current_date_time
+        ]);
+        DB::table('messages')->insert([
+            'sender_id' => 1,
+            'receiver_id' => 4,
+            'message' => 'Hello',
+            'created_at' => $current_date_time
+        ]);
+        DB::table('messages')->insert([
+            'sender_id' => 4,
+            'receiver_id' => 1,
+            'message' => 'what is this',
+            'created_at' => $current_date_time
+        ]);
+        DB::table('favorites')->insert([
+            'user1_id' => 2,
+            'user2_id' => 4,
+            'created_at' => $current_date_time
+        ]);
+        DB::table('messages')->insert([
+            'sender_id' => 2,
+            'receiver_id' => 4,
+            'message' => 'how are you',
+            'created_at' => $current_date_time
+        ]);
+        DB::table('messages')->insert([
+            'sender_id' => 4,
+            'receiver_id' => 2,
+            'message' => 'HI!',
+            'created_at' => $current_date_time
+        ]);
     }
 }
