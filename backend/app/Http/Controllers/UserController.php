@@ -27,4 +27,39 @@ class UserController extends Controller
         ]);
 
     }
+
+    public function addFavorite(Request $request)
+    {
+        $currUserID = Auth::id();
+
+        $request->validate([
+            'id' => 'required',
+        ]);
+
+        $favID = $request->only('id');
+
+        $mytime = Carbon::now();
+        $mytime->setTimezone('Asia/Jerusalem');
+
+        $values = array('user1_id' => $currUserID, 'user2_id' => $favID['id'], 'created_at' => $mytime);
+
+        $query = DB::table('favorites')->where([
+            ['user1_id', '=', $currUserID],
+            ['user2_id', '=', $favID['id']]
+        ])->get();
+
+        if (count($query) > 0) {
+            return response()->json([
+                'status' => 'No Edits',
+                "data" => count($query)
+            ]);
+        }
+
+        $query = DB::table('favorites')->insert($values);
+
+        return response()->json([
+            'status' => 'success',
+            "data" => $query
+        ]);
+    }
 }
