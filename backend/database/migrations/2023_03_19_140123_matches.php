@@ -12,11 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('matches', function (Blueprint $table) {
-            $table->id();
-            $table->integer('left_user_id');
-            $table->integer('right_user_id');
-            $table->string('date_of_match');
-            $table->boolean('is_mutual');
+            $table->unsignedBigInteger('user1_id');
+            $table->foreign('user1_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('user2_id');
+            $table->foreign('user2_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
