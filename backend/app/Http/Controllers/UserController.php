@@ -29,7 +29,17 @@ class UserController extends Controller
     }
 
     public function getFavorites(){
-        $user = User::join('favorites', 'users.id', '=', 'favorites.user2_id')->where('favorites.user1_id', '=', Auth::id())->get();
+        $users = User::join('favorites', 'users.id', '=', 'favorites.user2_id')->where('favorites.user1_id', '=', Auth::id())->get();
+        if (Auth::id()) {
+            if (!$users) {
+                $users = "No favorites yet!";
+            }
+
+            return response()->json([
+                'status' => 'Retrieved Favorites',
+                "users" => $users
+            ]);
+        }
     }
     //ADD TO FAVORITES
     public function addFavorite(Request $request)
