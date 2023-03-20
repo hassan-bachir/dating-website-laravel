@@ -69,7 +69,13 @@ class UserController extends Controller
 public function blockUser(request $request){
 
     $currentID = Auth::id();
+    
+    $request->validate([
+        'id' => 'required',
+    ]);
 
+    
+    $blockID = $request->only('id');
 
 }
 
