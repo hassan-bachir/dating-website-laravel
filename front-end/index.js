@@ -70,8 +70,8 @@ dating_pages.postAPI = async (
         });
     });
 
-    // -- Login Page Input Controller
-    // -- -- Sign In
+
+
     signInSubmit.addEventListener("click", async (event) => {
         // Authenticate and Authorize
         // -- Data Section
@@ -104,8 +104,9 @@ dating_pages.postAPI = async (
         const signUpEmail = document.getElementById("signUpEmail");
         const dateOfBirth = document.getElementById("dob");
         const signUpPass = document.getElementById("signUpPass");
-        const genderv = document.getElementById("gender"); // 0 male; 1 female
-        const preferencev = document.getElementById("preference"); // 0 male; 1 female
+        const genderv = document.getElementById("gender");
+        
+        const preferencev = document.getElementById("preference"); 
         const interests = "Edit Interests";
         const postData = {
         name: signUpName.value,
