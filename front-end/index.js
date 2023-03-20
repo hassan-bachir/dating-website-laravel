@@ -3,10 +3,10 @@ const dating_pages = {};
 
 dating_pages.baseURL = "http://127.0.0.1:8000/api";
 
-// //for dynamic loading
-// dating_pages.loadFor = (page) => {
-//     eval("dating_pages.load_" + page + "();");
-// };
+//for dynamic loading
+dating_pages.loadFor = (page) => {
+    eval("dating_pages.load_" + page + "();");
+};
 
 // Console Tracker
 dating_pages.Console = (title, values, oneValue = true) => {
@@ -49,7 +49,7 @@ dating_pages.postAPI = async (
     };
 
 
-   
+
     const formCloser = document.querySelectorAll(".close-form p");
     const signInBtn = document.getElementById("signIn");
     const signInForm = document.getElementById("signInForm");
