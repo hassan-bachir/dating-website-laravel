@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('favorites', function (Blueprint $table) {
+        Schema::create('blocks', function (Blueprint $table) {
             $table->unsignedBigInteger('user1_id');
             $table->foreign('user1_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('user2_id');
