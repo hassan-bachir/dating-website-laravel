@@ -28,6 +28,9 @@ class UserController extends Controller
 
     }
 
+    public function getFavorites(){
+        $user = User::join('favorites', 'users.id', '=', 'favorites.user2_id')->where('favorites.user1_id', '=', Auth::id())->get();
+    }
     //ADD TO FAVORITES
     public function addFavorite(Request $request)
     {
@@ -83,6 +86,8 @@ class UserController extends Controller
             "data" => $query
         ]);
     }   
+
+
     public function removeBlock(Request $request)    
     {
         $currUserID = Auth::id();
