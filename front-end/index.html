@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,7 +79,7 @@
 
             <div class="flex-col form-row">
                 <label>Looking For</label>
-                <select id="selectedGender">
+                <select id="preference">
                 <option value="0">Males</option>
                 <option value="1">Females</option>
             </select>
@@ -98,16 +98,7 @@
                 />
             </div>
 
-            <div class="flex-col form-row">
-                <label>Location:</label>
-                <button
-                class="btn"
-                id="locationDetectorSignUp"
-                style="font-size: 12px"
-                >
-                Detect Location
-                </button>
-            </div>
+        
             </div>
         </div>
 
@@ -129,9 +120,9 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
     <script src="./index.html"></script>
-    <!-- <script>
-        dating_pages.loadFor("load_login");
-    </script> -->
+    <script>
+        dating_pages.loadFor("login");
+    </script>
 
 </body>
 </html>
