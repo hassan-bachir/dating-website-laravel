@@ -132,5 +132,11 @@ public function editProfile(request $request){
         $user->gender_preference = $request['preference'];
     }
 
+    $user->save();
+
+    return response()->json([
+        'status' => 'success',
+        "data" => $user
+    ]);
 }
 }
