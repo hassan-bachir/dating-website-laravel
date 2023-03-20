@@ -18,7 +18,14 @@ class User extends Authenticatable implements JWTSubject
     protected $fillable = [
         'name',
         'email',
+        'mobile',
         'password',
+        'date_of_birth',
+        'gender',
+        'preference',
+        'location',
+        'profile_pic'
+
     ];
 
     /**
@@ -39,6 +46,19 @@ class User extends Authenticatable implements JWTSubject
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    /**
+     * Save the user instance to the database.
+     *
+     * @param  array  $options
+     * @return bool
+     */
+    public function save(array $options = [])
+    {
+        // Add any custom logic here before saving the user instance to the database
+        
+        return parent::save($options);
+    }
 
     /**
      * Get the identifier that will be stored in the subject claim of the JWT.
