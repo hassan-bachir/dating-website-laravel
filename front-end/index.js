@@ -3,10 +3,10 @@ const dating_pages = {};
 
 dating_pages.baseURL = "http://127.0.0.1:8000/api";
 
-//for dynamic loading
-dating_pages.loadFor = (page) => {
-    eval("dating_pages.load_" + page + "();");
-};
+// //for dynamic loading
+// dating_pages.loadFor = (page) => {
+//     eval("dating_pages.load_" + page + "();");
+// };
 
 // Console Tracker
 dating_pages.Console = (title, values, oneValue = true) => {
@@ -49,8 +49,7 @@ dating_pages.postAPI = async (
     };
 
 
-    dating_pages.load_login = async () => 
-    {
+   
     const formCloser = document.querySelectorAll(".close-form p");
     const signInBtn = document.getElementById("signIn");
     const signInForm = document.getElementById("signInForm");
@@ -97,16 +96,16 @@ dating_pages.postAPI = async (
     });
 
 
-     
 
-    // -- -- Sign Up
+
+    
     signUpSubmit.addEventListener("click", async (event) => {
         const signUpName = document.getElementById("signUpName");
         const signUpEmail = document.getElementById("signUpEmail");
         const dateOfBirth = document.getElementById("dob");
         const signUpPass = document.getElementById("signUpPass");
-        const gender = document.getElementById("gender"); // 0 male; 1 female
-        const selectedGender = document.getElementById("preference"); // 0 male; 1 female
+        const genderv = document.getElementById("gender"); // 0 male; 1 female
+        const preferencev = document.getElementById("preference"); // 0 male; 1 female
         const interests = "Edit Interests";
         const postData = {
         name: signUpName.value,
@@ -114,7 +113,6 @@ dating_pages.postAPI = async (
         image: "./assets/default.jpg",
         dob: dateOfBirth.value,
         password: signUpPass.value,
-        location: locationUpd,
         gender: gender.value,
         gender_preference: selectedGender.value,
         interests: interests,
@@ -133,5 +131,5 @@ dating_pages.postAPI = async (
         alert("Please use a different email");
         }
     });
-    };
+
 
