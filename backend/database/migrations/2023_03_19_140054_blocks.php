@@ -12,9 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('blocks', function (Blueprint $table) {
-            $table->integer('user1_id');
-            $table->integer('user2_id');
-            $table->string('created_at');
+            $table->unsignedBigInteger('user1_id');
+            $table->foreign('user1_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('user2_id');
+            $table->foreign('user2_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
