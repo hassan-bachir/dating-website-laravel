@@ -89,7 +89,7 @@ dating_pages.postAPI = async (
         dating_pages.Console("Testing login API", response_login);
         if (response_login) {
         localStorage.setItem("jwt", response_login.data.authorisation.token);
-        window.open("./landingPage.html", "_self");
+        // window.open("./#", "_self");
         } else {
         alert("UNAUTHORIZED");
         }
@@ -111,12 +111,11 @@ dating_pages.postAPI = async (
         const postData = {
         name: signUpName.value,
         email: signUpEmail.value,
-        image: "./assets/default.jpg",
         dob: dateOfBirth.value,
         password: signUpPass.value,
         gender: gender.value,
         preference: preference.value,
-        interests: interests,
+        
         };
 
         console.log(postData);
