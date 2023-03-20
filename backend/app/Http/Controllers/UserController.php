@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Hash;
 
 
 
-
+//GET USERS
 class UserController extends Controller
 {
     public function getUsers(){
@@ -28,6 +28,7 @@ class UserController extends Controller
 
     }
 
+    //ADD TO FAVORITES
     public function addFavorite(Request $request)
     {
         $currUserID = Auth::id();
@@ -62,4 +63,14 @@ class UserController extends Controller
             "data" => $query
         ]);
     }
+
+
+
+public function blockUser(request $request){
+
+    $currentID = Auth::id();
+
+
+}
+
 }
