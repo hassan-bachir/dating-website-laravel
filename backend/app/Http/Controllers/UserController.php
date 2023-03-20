@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Hash;
 //GET USERS
 class UserController extends Controller
 {
-    public function getUsers(){
+    public function getUsers() {
         
         $user = Auth::users();            //hyde enno elli mta3mik block ma bibayyin 3ndak 
         $data = DB::table('users')->leftJoin('blocks','users.id','=','blocks.user2_id')->get()->where('user2_id', '=', '')->where('id', '!=', $user->id)->where('gender', '=', $user->preference);
@@ -103,7 +103,7 @@ public function blockUser(request $request){
 
 
 
-}
+    }
 
 
 public function editProfile(request $request){
@@ -132,11 +132,15 @@ public function editProfile(request $request){
         $user->gender_preference = $request['preference'];
     }
 
-    $user->save();
+    $user -> save();
+    
 
     return response()->json([
         'status' => 'success',
         "data" => $user
     ]);
-}
+    
+    }
+
+
 }
