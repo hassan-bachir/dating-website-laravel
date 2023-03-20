@@ -122,7 +122,15 @@ public function editProfile(request $request){
     if ($request['mobile']) {
         $user->phone_number = $request['mobile'];
     }
-    if 
+    if ($request['date_of_birth']){
+        $user->date_of_birth = $request['date_of_birth'];
+    }
+    if ($request['gender']) {
+        $user->gender = $request['gender'];
+    }
+    if ($request['preference']) {
+        $user->gender_preference = $request['preference'];
+    }
 
 }
 }
