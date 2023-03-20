@@ -76,6 +76,32 @@ public function blockUser(request $request){
 
     
     $blockID = $request->only('id');
+    
+    $mytime = Carbon::now();
+    $mytime->setTimezone('Asia/Jerusalem');
+
+    $values = array('user1_id' => $currentID, 'user2_id' => $blockID['id'], 'created_at' => $mytime);
+
+    $query = DB::table('blocks')->where([
+        ['user1_id', '=', $currentID],
+        ['user2_id', '=', $blockID['id']]
+    ])->get();
+
+    if (count($query) > 0) {
+        return response()->json([
+            'status' => 'No Edits',
+            "data" => count($query)
+        ]);
+    }
+    
+    $query = DB::table('blocks')->insert($values);
+
+    return response()->json([
+        'status' => 'success',
+        "data" => $query
+    ]);
+
+
 
 }
 
