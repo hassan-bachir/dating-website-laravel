@@ -63,7 +63,46 @@ class UserController extends Controller
             "data" => $query
         ]);
     }
+    public function removeFavorite(Request $request)    
+    {
+        $currUserID = Auth::id();
 
+        $request->validate([
+            'id' => 'required',
+        ]);
+
+        $favID = $request->only('id');
+
+        $query = DB::table('favorites')->where([
+            ['user1_id', '=', $currUserID],
+            ['user2_id', '=', $favID['id']]
+        ])->delete();
+
+        return response()->json([
+            'status' => 'success',
+            "data" => $query
+        ]);
+    }   
+    public function removeBlock(Request $request)    
+    {
+        $currUserID = Auth::id();
+
+        $request->validate([
+            'id' => 'required',
+        ]);
+
+        $blockID = $request->only('id');
+
+        $query = DB::table('blocks')->where([
+            ['user1_id', '=', $currUserID],
+            ['user2_id', '=', $blockID['id']]
+        ])->delete();
+
+        return response()->json([
+            'status' => 'success',
+            "data" => $query
+        ]);
+    }   
 
 
 public function blockUser(request $request){
