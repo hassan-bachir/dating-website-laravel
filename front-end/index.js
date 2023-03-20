@@ -49,7 +49,8 @@ dating_pages.postAPI = async (
     };
 
 
-    dating_pages.load_login = async () => {
+    dating_pages.load_login = async () => 
+    {
     const formCloser = document.querySelectorAll(".close-form p");
     const signInBtn = document.getElementById("signIn");
     const signInForm = document.getElementById("signInForm");
@@ -95,37 +96,8 @@ dating_pages.postAPI = async (
         }
     });
 
-    // -- -- -- Location Saver SignUp
-    const locationDetectorSignUp = document.getElementById(
-        "locationDetectorSignUp"
-    );
 
-    locationDetectorSignUp.addEventListener(
-        "click",
-        () => {
-        const options = {
-            enableHighAccuracy: true,
-            timeout: 5000,
-            maximumAge: 0,
-        };
-
-        const success = async (pos) => {
-            let crd = pos.coords;
-            let lat = crd.latitude.toString();
-            let lng = crd.longitude.toString();
-            coordinates[0] = lat;
-            coordinates[1] = lng;
-            console.log(coordinates);
-        };
-
-        function error(err) {
-            console.warn(`ERROR(${err.code}): ${err.message}`);
-        }
-
-        navigator.geolocation.getCurrentPosition(success, error, options);
-        },
-        { once: true }
-    );
+     
 
     // -- -- Sign Up
     signUpSubmit.addEventListener("click", async (event) => {
@@ -133,9 +105,8 @@ dating_pages.postAPI = async (
         const signUpEmail = document.getElementById("signUpEmail");
         const dateOfBirth = document.getElementById("dob");
         const signUpPass = document.getElementById("signUpPass");
-        const locationUpd = `${coordinates[0]},${coordinates[1]}`;
         const gender = document.getElementById("gender"); // 0 male; 1 female
-        const selectedGender = document.getElementById("selectedGender"); // 0 male; 1 female
+        const selectedGender = document.getElementById("preference"); // 0 male; 1 female
         const interests = "Edit Interests";
         const postData = {
         name: signUpName.value,
