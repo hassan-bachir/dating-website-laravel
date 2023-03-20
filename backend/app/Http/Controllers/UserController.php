@@ -105,4 +105,24 @@ public function blockUser(request $request){
 
 }
 
+
+public function editProfile(request $request){
+    $user =  Auth::user();
+
+    if($request['name']){
+        $user -> name = $request['name'];
+    }
+
+    if ($request['email']) {
+        $user->email = $request['email'];
+    }
+    if ($request['password']) {
+        $user->password = Hash::make($request->password);
+    }
+    if ($request['mobile']) {
+        $user->phone_number = $request['mobile'];
+    }
+    if 
+
+}
 }
