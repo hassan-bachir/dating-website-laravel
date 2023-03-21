@@ -132,5 +132,4 @@ dating_pages.postAPI = async (
         alert("Please use a different email");
         }
     });
-
-
+    const logout = document.getElementById('logout')
