@@ -105,12 +105,14 @@ dating_pages.postAPI = async (
         const dateOfBirth = document.getElementById("dob");
         const signUpPass = document.getElementById("signUpPass");
         const gender = document.getElementById("gender");
+        const mobile = document.getElementById("signUpMobile");
         
         const preference = document.getElementById("preference"); 
         const interests = "Edit Interests";
         const postData = {
         name: signUpName.value,
         email: signUpEmail.value,
+        mobile:signUpMobile.value,
         dob: dateOfBirth.value,
         password: signUpPass.value,
         gender: gender.value,
