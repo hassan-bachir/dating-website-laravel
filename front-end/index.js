@@ -89,7 +89,7 @@ dating_pages.postAPI = async (
         dating_pages.Console("Testing login API", response_login);
         if (response_login) {
         localStorage.setItem("jwt", response_login.data.authorisation.token);
-        // window.open("./#", "_self");
+        window.open("./favorites.html", "_self");
         } else {
         alert("UNAUTHORIZED");
         }
