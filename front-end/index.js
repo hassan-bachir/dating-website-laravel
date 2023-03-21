@@ -108,7 +108,6 @@ dating_pages.postAPI = async (
         const signUpMobile = document.getElementById("signUpMobile");
         
         const preference = document.getElementById("preference"); 
-        const interests = "Edit Interests";
         const postData = {
         name: signUpName.value,
         email: signUpEmail.value,
