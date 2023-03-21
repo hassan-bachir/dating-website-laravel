@@ -196,8 +196,10 @@ public function editProfile(request $request){
     
     }
 
-    public function getMesssages(){
-        $recieverId =
+    public function getMesssages(request $request){
+        $recieverId = $request['id'];
+
+        
     }
 
 }
